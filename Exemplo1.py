@@ -1,5 +1,6 @@
 #Descobrindo os tipos de dados
 
+#Exemplo 1
 idade= 18
 
 altura= 1.75
