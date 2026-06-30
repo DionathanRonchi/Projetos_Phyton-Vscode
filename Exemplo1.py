@@ -1,12 +1,20 @@
 #Descobrindo os tipos de dados
 
+<<<<<<< HEAD
+=======
+#Exemplo 1
+>>>>>>> 63a7637a78d0f47664175472463d34ac4cff2e9e
 idade= 18
 
 altura= 1.75
 
 nome= "João"
 
+<<<<<<< HEAD
 aprovado= true
+=======
+aprovado= True
+>>>>>>> 63a7637a78d0f47664175472463d34ac4cff2e9e
 
 frutas= ("Maça", "Banana", "Uva")
 
@@ -39,4 +47,8 @@ print("\ncores:", cores)
 print("Tipo:", type(cores))
 
 print("\naluno:", aluno)
+<<<<<<< HEAD
 print("Tipo:", type(aluno))
+=======
+print("Tipo:", type(aluno))
+>>>>>>> 63a7637a78d0f47664175472463d34ac4cff2e9e
