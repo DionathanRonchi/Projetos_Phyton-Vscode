@@ -53,7 +53,7 @@ while True:
         print("Agenda Vazia")
 
     elif opcao == "5":
-        nome = input("Nome para excluirr: ")
+        nome = input("Nome para excluir: ")
         if nome in agenda:
             del agenda[nome]
             print("Cpntado removido")
