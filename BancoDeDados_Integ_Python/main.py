@@ -23,7 +23,7 @@ except mysql.connector.Error as erro:
 
 finally:
     if conexao and conexao.is_connected():
-       conexao.close()
+        conexao.close()
 
 
 def cadastrar_produto(nome, preco, quantidade, categoria):
