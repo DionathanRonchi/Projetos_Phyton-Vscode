@@ -1,9 +1,9 @@
-﻿import sys
+﻿﻿import sys
 from pathlib import Path
 import mysql.connector
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from config import DB_CONFIG
+from BancoDeDados_Integ_Python.produtos.config import DB_CONFIG
 
 
 def conectar():

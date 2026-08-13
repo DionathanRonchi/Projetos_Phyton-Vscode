@@ -1,4 +1,4 @@
-from config import DB_CONFIG
+from BancoDeDados_Integ_Python.produtos.config import DB_CONFIG
 import mysql.connector
 
 conexao = None
