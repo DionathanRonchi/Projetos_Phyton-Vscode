@@ -9,7 +9,7 @@ class produto:
         return (self.nome, self.preco, self.quantidade, self.categoria)
 
     @staticmethod
-    def revert_tupla(self, tupla):
+    def revert_tupla(tupla):
         produto = produto(
            nome = tupla[1], 
            preco = tupla[2], 
@@ -17,7 +17,7 @@ class produto:
            categoria = tupla[4]
            )
         
-        produto = id = tupla[0]
+        produto.id = tupla[0]
         return produto
 
     def exibir(self):
