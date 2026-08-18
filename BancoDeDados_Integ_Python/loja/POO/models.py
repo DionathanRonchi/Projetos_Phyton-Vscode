@@ -10,15 +10,15 @@ class produto:
 
     @staticmethod
     def revert_tupla(tupla):
-        produto = produto(
+        p = produto(
            nome = tupla[1], 
            preco = tupla[2], 
            quantidade = tupla[3], 
            categoria = tupla[4]
            )
         
-        produto.id = tupla[0]
-        return produto
+        p.id = tupla[0]
+        return p
 
     def exibir(self):
         print(f"{self.id} | {self.nome} | {self.preco} | {self.quantidade} | {self.categoria}")
