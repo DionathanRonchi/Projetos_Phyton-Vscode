@@ -10,12 +10,16 @@ def index():
 
 @app.route("/produtos")
 def produtos():
-    return render_template('produtos.html')
-
+    lista = [
+        {"nome": "Notebook", "preco": 3499.00, "categoria": "Eletronicos"},
+        {"nome": "Frigideira", "preco": 30.50, "categoria": "Cozinha"},
+        {"nome": "Shampoo", "preco": 7.99, "categoria": "Banheiro"}
+    ]
+    return render_template('produtos.html', produtos=lista)
 
 @app.route('/sobre')
 def sobre():
-    return "Esta é a página sobre."
+    return render_template('sobre.html')
 
 @app.route("/produto/<int:id>")
 def produto(id):
@@ -24,7 +28,7 @@ def produto(id):
 
 @app.route("/categoria/<nome>")
 def categoria(nome):
-    return f"Produtos da categoria: {nome}."
+    return render_template('categoria.html', nome=nome, produtos=[])  
 
 #INICIAR SERVIDOR FLASK
 if __name__ == '__main__':
