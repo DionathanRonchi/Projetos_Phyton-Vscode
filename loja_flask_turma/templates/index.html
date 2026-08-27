@@ -10,9 +10,9 @@
 <p> Sistema de gerenciamento de produtos</p>
 
 <nav>
-    <a href="/">Inicio</a> |
-    <a href="/produtos">Produtos</a> |
-    <a href="/sobre">Sobre</a>
+    <a href="/{{ url_for('index') }}">Inicio</a> |
+    <a href="{{ url_for('produtos') }}">Produtos</a> |
+    <a href="{{ url_for('sobre') }}">Sobre</a>
 </nav>
 
 </body>
