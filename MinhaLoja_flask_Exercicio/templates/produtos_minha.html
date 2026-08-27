@@ -1,0 +1,26 @@
+
+<nav>
+    <a href="{{ url_for('index') }}">Inicio</a> |
+    <a href="{{ url_for('produtos') }}">Produtos</a> |
+    <a href="{{ url_for('sobre') }}">Sobre</a>
+</nav>
+
+<h1>Lista de Produtos</h1>
+<table border="1">
+        <tr>
+            <h1>Produtos Disponíveis</h1>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+        {% for p in produtos %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ p.nome }}</td>
+            <td>R$ {{ "%.2f" | format(p.preco) }}</td>
+            <td>{{ p.categoria }}</td>
+        </tr>
+        {% endfor %}
+</table>
+    </tbody>
