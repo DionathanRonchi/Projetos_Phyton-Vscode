@@ -1,0 +1,43 @@
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a> |
+        <a href="{{ url_for('produtos') }}">Produtos</a> |
+        <a href="{{ url_for('catalogo') }}">Catálogo</a> |
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+    </nav>
+</body>
+
+<h1>Catálogo de Produtos</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Qualidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {% for p in produtos %}
+        <tr {% if p.qualidade|int == 0%}
+                style="background-color: rgb(255, 0, 0);"
+
+            {% elif p.qualidade|int < 9 %} 
+                style="background-color: rgb(255, 174, 0);"
+
+            {% else %}
+                style="background-color: rgb(0, 255, 0);"
+            {% endif %}>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nome }}</td>
+            <td>R$ {{ "%.2f" | format(p.preco) }}</td>
+            <td>{{ p.categoria }}</td>
+            <td>{{ p.qualidade }}</td>
+            <td><a href="{{ url_for('produtos', id=p.id) }}">Detalhes</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

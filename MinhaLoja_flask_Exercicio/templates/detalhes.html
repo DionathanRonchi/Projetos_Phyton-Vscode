@@ -1,0 +1,20 @@
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a> |
+        <a href="{{ url_for('catalogo') }}">Catálogo</a> |
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+    </nav>
+
+    {% if produto %}
+        {% if produto.qualidade == 0 %}
+            <p style="background-color: rgb(255, 0, 0);">Produto fora de estoque</p>
+        {% elif produto.qualidade|int < 9 %}
+            <p style="background-color: rgb(255, 174, 0);">Atenção: Produto com qualidade baixa</p>
+        {% else %}
+            <p style="background-color: rgb(0, 255, 0);">Em estoque</p>
+        {% endif %}
+    {% else %}
+        <p>Produto não encontrado</p>
+    {% endif % }
+
+</body>
