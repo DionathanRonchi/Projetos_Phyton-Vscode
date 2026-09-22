@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes</title>
+</head>
+<body>
+
+    <h1>Detalhes do pet</h1>
+
+    <!-- Verifica se o pet foi encontrado -->
+    {% if item %}
+
+        <p>Nome: {{ pet.nome }}</p>
+        <p>Especie:{{ pet.especie }}</p>
+        <p>Dono: {{ pet.dono }}</p>
+
+        {% if pet.disponivel %}
+            <p>Disponível</p>
+        {% else %}
+            <p>pet Esgotado</p>
+        {% endif %}
+
+    {% else %}
+
+        <p>pet não encontrado.</p>
+
+    {% endif %}
+
+    <a href="{{ url_for('pet') }}">
+    </a>
+
+</body>
+</html>

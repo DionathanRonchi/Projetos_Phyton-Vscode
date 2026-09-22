@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PetShop</title>
+</head>
+<body>
+
+    <h1>Cardápio</h1>
+
+    <!-- Mostra a quantidade total dos pets -->
+    <p>Total de pets: {{ pets|length }}</p>
+
+    <table border="1">
+        <tr>
+            <th>Nº</th>
+            <th>Nome</th>
+            <th>Especie</th>
+            <th>Dono</th>
+        </tr>
+
+        {% for pet in pets %}
+        <!-- Uma linha para cada item -->
+        <tr>
+            <td>{{ loop.index }}</td>
+
+            <td>{{ pet.nome }}</td>
+
+            <td>{{ pet.especie }}</td>
+
+            <td>{{ pet.dono }}</td>
+
+            <td>
+                {% if pet.disponivel %}
+                    Disponível
+                {% else %}
+                    Esgotado
+                {% endif %}
+            </td>
+
+            <td>
+                <a href="{{ url_for('detalhe', id=pet.id) }}">
+                    Ver detalhes
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
