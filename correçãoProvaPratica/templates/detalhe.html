@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes</title>
+</head>
+<body>
+
+    <h1>Detalhes do item</h1>
+
+    <!-- Verifica se o item foi encontrado -->
+    {% if item %}
+
+        <p>Nome: {{ item.nome }}</p>
+        <p>Preço: R$ {{ "%.2f"|format(item.preco) }}</p>
+        <p>Tipo: {{ item.tipo }}</p>
+
+        {% if item.disponivel %}
+            <p>Disponível</p>
+        {% else %}
+            <p>Esgotado</p>
+        {% endif %}
+
+    {% else %}
+
+        <p>Item não encontrado.</p>
+
+    {% endif %}
+
+    <a href="{{ url_for('cardapio') }}">
+        Voltar para o cardápio
+    </a>
+
+</body>
+</html>

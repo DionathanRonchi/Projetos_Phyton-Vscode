@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio</title>
+</head>
+<body>
+
+    <h1>Cardápio</h1>
+
+    <!-- Mostra a quantidade total de itens -->
+    <p>Total de itens: {{ itens|length }}</p>
+
+    <table border="1">
+        <tr>
+            <th>Nº</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Tipo</th>
+            <th>Disponibilidade</th>
+            <th>Detalhes</th>
+        </tr>
+
+        {% for item in itens %}
+        <!-- Uma linha para cada item -->
+        <tr>
+            <td>{{ loop.index }}</td>
+
+            <td>{{ item.nome }}</td>
+
+            <td>R$ {{ "%.2f"|format(item.preco) }}</td>
+
+            <td>{{ item.tipo }}</td>
+
+            <td>
+                {% if item.disponivel %}
+                    Disponível
+                {% else %}
+                    Esgotado
+                {% endif %}
+            </td>
+
+            <td>
+                <a href="{{ url_for('detalhe', id=item.id) }}">
+                    Ver detalhes
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
